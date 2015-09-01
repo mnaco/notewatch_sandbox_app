@@ -7703,7 +7703,8 @@ a.button {
 body {
   background: #44484b;
   font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center; }
+  text-align: center;
+  -webkit-overflow-scrolling: touch; }
 
 p {
   padding: .2em; }
@@ -7721,7 +7722,7 @@ p {
   color: #8f969c;
   border-bottom: 1px solid #666b6f;
   margin: 0;
-  padding: 1em 10px 0 10px;
+  padding: 40px 10px 0 10px;
   position: relative; }
   .rangeBlock:before, .rangeBlock:after {
     position: absolute;
@@ -7738,6 +7739,7 @@ p {
     background: #7b3700; }
   .rangeBlock .rangeTitle {
     position: absolute;
+    color: #fff;
     margin: 0 20px;
     background-color: #44484b;
     line-height: 1;
