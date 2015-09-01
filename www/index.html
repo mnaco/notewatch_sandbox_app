@@ -11,58 +11,60 @@
         <link href="http://fonts.googleapis.com/css?family=Open%20Sans%20Condensed%3A300" rel="stylesheet" type="text/css">
     <link href="css/ionic.app.css" rel="stylesheet">
 
-    <!-- mixitup-->
-        <script src="/js/notewatch/jquery-1.11.3.min.js"></script>
-		<script src="/js/notewatch/jquery.mixitup.min.js"></script>
-        <script>
-            $(function(){
-                $('.rangeBlock').mixItUp();
-            });
-        </script>
         
+        
+      
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+        
+       
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+        
+                  <script src="js/notewatch/jquery-1.11.3.min.js"></script>
+		<script src="js/notewatch/jquery.mixitup.min.js"></script>
+        <script>
+            jQuery(function(){
+            jQuery('.rangeBlock').mixItUp();
+        });
+        </script>
+        
+        
     </head>
     
     <body ng-app="notewatchapp">
 
 
 
-    <!--
-        <ion-pane>
-            <ion-header-bar class="bar-stable">
-                <h1 class="title">Notewatch</h1>
-            </ion-header-bar>
-            <ion-content>
-            </ion-content>
-        </ion-pane>
-    -->
-        
-        
-        
-        
-        <!-- --------------------------------- -->
+         <ion-side-menus>
+
+    <!-- Center content -->
+    <ion-side-menu-content>
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Notewatch | 1856</h1>
+      </ion-header-bar>
+      <ion-content>
+          
+            <!-- --------------------------------- -->
         <div class="pageHeader">
             
             <div class="watchers">
                 <ul>
                     <li class="filter" data-filter=".dd">
-                        <img src="/img/avatars/p.jpg" alt="" data-label-notification="3">
+                        <img src="img/avatars/p.jpg" alt="" data-label-notification="3">
                     </li>
                     <li class="filter" data-filter=".mm">
-                        <img src="/img/avatars/m.jpg" alt="">
+                        <img src="img/avatars/m.jpg" alt="">
                     </li>
                     <li class="filter" data-filter=".sn">
-                        <img src="/img/avatars/s.jpg" alt="">
+                        <img src="img/avatars/s.jpg" alt="">
                     </li>
                     <li class="filter" data-filter=".dr">
-                        <img src="/img/avatars/d.jpg" alt="">
+                        <img src="img/avatars/d.jpg" alt="">
                     </li>
                     <li class="filter" data-filter="all">
                         all
@@ -79,13 +81,13 @@
             <div class="rangeBlock today">
                 <ul class="memos">
                     <li class="mix dd">
-                        <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">Today</span><span class="time">09:00</span></div>
                         <div class="memoContent"><h3>t1</h3></div>
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix mm">
-                        <div class="memoAvatar"><img src="/img/avatars/m.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/m.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">Today</span></div>
                         <div class="memoContent">
                             <h3>t2</h3>
@@ -94,13 +96,13 @@
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix dd">
-                        <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">Today</span></div>
                         <div class="memoContent"><h3>t3</h3></div>
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix dd">
-                        <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">Today</span><span class="time">18:00</span></div>
                         <div class="memoContent"><h3>t4</h3></div>
                         <div class="memoAttachment"></div>
@@ -115,13 +117,13 @@
                 <h2 class="rangeTitle">Next 3 days</h2>
                 <ul class="memos">
                      <li class="mix dd">
-                        <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">30</span><span class="time">Sun</span></div>
                         <div class="memoContent"><h3>3d1</h3></div>
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix sn">
-                        <div class="memoAvatar"><img src="/img/avatars/s.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">31</span><span class="time">Mon 09:00</span></div>
                         <div class="memoContent">
                             <h3>3d2</h3>
@@ -130,7 +132,7 @@
                         <div class="memoAttachment"></div>
                     </li>
                      <li class="mix sn">
-                        <div class="memoAvatar"><img src="/img/avatars/s.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
                          <div class="memoDate"><span class="day">01</span><span>Sep</span><span class="time">THU  18:30</span></div>
                         <div class="memoContent"><h3>3d3</h3></div>
                         <div class="memoAttachment"></div>
@@ -145,13 +147,13 @@
                 <h2 class="rangeTitle">Another 7 days</h2>
                 <ul class="memos">
                  <li class="mix dr">
-                    <div class="memoAvatar"><img src="/img/avatars/d.jpg" alt=""></div>
+                    <div class="memoAvatar"><img src="img/avatars/d.jpg" alt=""></div>
                     <div class="memoDate"><span class="day">05</span><span>Sep</span><span class="time">18:00</span></div>
                     <div class="memoContent"><h3>7d1</h3></div>
                     <div class="memoAttachment"></div>
                 </li>
                 <li class="mix dd">
-                    <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                    <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                     <div class="memoDate"><span class="day">08</span><span>Sep</span><span class="time">THU 18:00</span></div>
                     <div class="memoContent">
                         <h3>7d2</h3>
@@ -160,13 +162,13 @@
                     <div class="memoAttachment"></div>
                 </li>
                 <li class="mix mm">
-                    <div class="memoAvatar"><img src="/img/avatars/m.jpg" alt=""></div>
+                    <div class="memoAvatar"><img src="img/avatars/m.jpg" alt=""></div>
                     <div class="memoDate"><span class="day">10</span><span>Sep</span><span class="time">18:00</span></div>
                     <div class="memoContent"><h3>7d3</h3></div>
                     <div class="memoAttachment"></div>
                 </li>
                 <li class="mix sn">
-                    <div class="memoAvatar"><img src="/img/avatars/s.jpg" alt=""></div>
+                    <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
                     <div class="memoDate"><span class="day">10</span><span>Sep</span><span class="time">18:00</span></div>
                     <div class="memoContent"><h3>7d3</h3></div>
                     <div class="memoAttachment"></div>
@@ -180,13 +182,13 @@
                 <h2 class="rangeTitle">Later</h2>
                  <ul class="memos">
                      <li class="mix dr">
-                        <div class="memoAvatar"><img src="/img/avatars/d.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/d.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">05</span><span>Okt</span><span class="time">Fri 18:00</span></div>
                         <div class="memoContent"><h3>7d1</h3>We see in more shades of green than any other colour &#x2013; that&#x2019;s why night vision goggles use it.</div>
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix dd">
-                        <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">08</span><span>Nov</span></div>
                         <div class="memoContent">
                             <h3>7d2</h3>
@@ -195,13 +197,13 @@
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix mm">
-                        <div class="memoAvatar"><img src="/img/avatars/m.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/m.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">10</span><span>Dec</span><span class="time">Sat 18:00</span></div>
                         <div class="memoContent"><h3>7d3</h3></div>
                         <div class="memoAttachment"></div>
                     </li>
                     <li class="mix sn">
-                        <div class="memoAvatar"><img src="/img/avatars/s.jpg" alt=""></div>
+                        <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">31</span><span>Dec</span><span class="time">00:00</span></div>
                         <div class="memoContent"><h3>7d3</h3>Happy</div>
                         <div class="memoAttachment"></div>
@@ -212,8 +214,19 @@
 
         </div>
         <!-- --------------------------------- -->
-      
+      </ion-content>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Settings</h1>
+      </ion-header-bar>
+    </ion-side-menu>
+
+  </ion-side-menus>
         
+   
 
     </body>
 </html>

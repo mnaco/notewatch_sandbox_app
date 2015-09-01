@@ -1,5 +1,5 @@
 {
-  "name": "all",
+  "name": "Notewatch Alpha",
   "app_id": "5c508ac8",
   "gulpStartupTasks": [
     "sass",
