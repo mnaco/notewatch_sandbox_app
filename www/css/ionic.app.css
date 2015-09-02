@@ -7700,11 +7700,16 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(fonts/font.woff2) format('woff2'); }
+
 body {
   background: #44484b;
   font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center;
-  -webkit-overflow-scrolling: touch; }
+  text-align: center; }
 
 p {
   padding: .2em; }
@@ -7722,7 +7727,7 @@ p {
   color: #8f969c;
   border-bottom: 1px solid #666b6f;
   margin: 0;
-  padding: 40px 10px 0 10px;
+  padding: 1em 10px 0 10px;
   position: relative; }
   .rangeBlock:before, .rangeBlock:after {
     position: absolute;
@@ -7739,7 +7744,6 @@ p {
     background: #7b3700; }
   .rangeBlock .rangeTitle {
     position: absolute;
-    color: #fff;
     margin: 0 20px;
     background-color: #44484b;
     line-height: 1;
@@ -7787,11 +7791,20 @@ p {
 .pageHeader {
   position: relative;
   min-height: 300px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url('../img/header_bcgr.jpg');
-  background-size: 100%; }
+  /*
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../img/header_bcgr.jpg');
+    background-size: 100%;
+*/ }
+  .pageHeader .headerImg {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+    .pageHeader .headerImg img {
+      display: block;
+      width: 100%; }
   .pageHeader .watchers {
     position: absolute;
     bottom: -40px;
