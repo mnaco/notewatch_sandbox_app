@@ -29,7 +29,12 @@
 		<script src="js/notewatch/jquery.mixitup.min.js"></script>
         <script>
             jQuery(function(){
-            jQuery('.rangeBlock').mixItUp();
+            jQuery('.rangeBlock').mixItUp({
+                animation: {
+                    duration: 200,
+                    effects: 'scale'
+                }
+            });
         });
         </script>
         
@@ -183,7 +188,7 @@
             </div>
             <!-- END 7 days -->
     
-            <!-- rest -->
+            <!-- later -->
             <div class="rangeBlock">
                 <h2 class="rangeTitle">Later</h2>
                  <ul class="memos">
@@ -211,6 +216,35 @@
                     <li class="mix sn">
                         <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
                         <div class="memoDate"><span class="day">31</span><span>Dec</span><span class="time">00:00</span></div>
+                        <div class="memoContent"><h3>7d3</h3>Happy</div>
+                        <div class="memoAttachment"></div>
+                    </li>
+                </ul>
+                <ul class="memos">
+                     <li class="mix dr">
+                        <div class="memoAvatar"><img src="img/avatars/d.jpg" alt=""></div>
+                        <div class="memoDate"><span class="day">05</span><span>Jan</span><span class="time">Fri 18:00</span></div>
+                        <div class="memoContent"><h3>7d1</h3>We see in more shades of green than any other colour &#x2013; that&#x2019;s why night vision goggles use it.</div>
+                        <div class="memoAttachment"></div>
+                    </li>
+                    <li class="mix dd">
+                        <div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
+                        <div class="memoDate"><span class="day">08</span><span>Feb</span></div>
+                        <div class="memoContent">
+                            <h3>7d2</h3>
+                            verylongwordaboutnithingjustfortestingifitswrapsornot
+                        </div>
+                        <div class="memoAttachment"></div>
+                    </li>
+                    <li class="mix mm">
+                        <div class="memoAvatar"><img src="img/avatars/m.jpg" alt=""></div>
+                        <div class="memoDate"><span class="day">10</span><span>Mar</span><span class="time">Sat 18:00</span></div>
+                        <div class="memoContent"><h3>7d3</h3></div>
+                        <div class="memoAttachment"></div>
+                    </li>
+                    <li class="mix sn">
+                        <div class="memoAvatar"><img src="img/avatars/s.jpg" alt=""></div>
+                        <div class="memoDate"><span class="day">31</span><span>Apr</span><span class="time">00:00</span></div>
                         <div class="memoContent"><h3>7d3</h3>Happy</div>
                         <div class="memoAttachment"></div>
                     </li>
