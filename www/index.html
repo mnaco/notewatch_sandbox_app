@@ -8,7 +8,7 @@
 
 
     <!-- compiled css output -->
-		<link href="http://fonts.googleapis.com/css?family=Open%20Sans%20Condensed%3A300" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open%20Sans%20Condensed%3A300" rel="stylesheet" type="text/css">
     <link href="css/ionic.app.css" rel="stylesheet">
 
         
@@ -26,8 +26,8 @@
     <script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
         
-                  <script src="js/notewatch/jquery-1.11.3.min.js"></script>
-		<script src="js/notewatch/jquery.mixitup.min.js"></script>
+	<script src="js/notewatch/jquery-1.11.3.min.js"></script>
+	<script src="js/notewatch/jquery.mixitup.min.js"></script>
         <script>
             jQuery(function(){
             jQuery('.rangeBlock').mixItUp({
@@ -49,46 +49,43 @@
 		 
 		<ion-content>
          	
-            <!-- --------------------------------- -->
+        <!-- --------------------------------- -->
         <div class="pageHeader">
-			
-<!--
-			<ion-list ng-controller="memoListCtrl">
-				<ion-item ng-repeat="item in toDoListItems">
-					<img src="img/avatars/{{item.avatar}}" alt="">
-				</ion-item>
-			</ion-list>
--->
-			
-			
-            <div class="headerImg">
+					
+            <div class="headerImg" >
                 <img src="img/header_bcgr.jpg" alt="">
             </div>
             
-            <div class="watchers">
+            <div class="watchers" ng-controller="watchersCtrl">
                 <ul>
-                    <li class="filter" data-filter=".dd">
-                        <img src="img/avatars/p.jpg" alt="">
-                    </li>
-                    <li class="filter" data-filter=".mm">
-                        <img src="img/avatars/m.jpg" alt="">
-                    </li>
-                    <li class="filter" data-filter=".sn">
-                        <img src="img/avatars/s.jpg" alt="">
-                    </li>
-                    <li class="filter" data-filter=".dr">
-                        <img src="img/avatars/d.jpg" alt="">
-                    </li>
+										<li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
+												<img src="img/avatars/{{item.avatar}}" alt="{{item.user}}">
+										</li>
                     <li class="filter" data-filter="all">
                         all
                     </li>
                 </ul>
             </div>
+					
             <h1 class="headerTitle">Hi there</h1>
         </div>
         
     
-        <div class="memosWrapper">
+        <div class="memosWrapper" ng-controller="memosCntr">
+
+					<div class="rangeBlock today">
+						<ul class="memos">
+							<li ng-repeat="item in memos" class="mix {{item.memoDep}}">
+								<div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
+								<div class="memoDate"><span class="day">Someday</span><span>{{item.memoDate}}</span></div>
+								<div class="memoContent">
+									<h3 class="memoTitle">{{item.memoTitle}}</h3>
+									{{item.memoContent}}
+								</div>
+								<div class="memoAttachment"></div>
+							</li>
+						</ul>
+					</div>
 	
             <!-- today -->
             <div class="rangeBlock today">
