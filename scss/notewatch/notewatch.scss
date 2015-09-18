@@ -47,6 +47,7 @@ h1,h2,h3 {
 		content: '';
 		height: 100%;
 		width: 5px;
+        background: #2b3135;
 	}
 	&.today:after { background: #ff7200; }
 	&.d3:after { background: #ae4e00; }
@@ -243,5 +244,8 @@ h1,h2,h3 {
 
 // mixit style
 .filter {
-    &.active { border-color: coral !important; }
+    &.active { 
+        background: #ff7200 !important; 
+        color: #fff;
+    }
 }

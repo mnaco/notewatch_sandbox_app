@@ -7739,7 +7739,8 @@ h1, h2, h3 {
     top: 0;
     content: '';
     height: 100%;
-    width: 5px; }
+    width: 5px;
+    background: #2b3135; }
   .rangeBlock.today:after {
     background: #ff7200; }
   .rangeBlock.d3:after {
@@ -7897,4 +7898,5 @@ h1, h2, h3 {
   overflow: hidden; }
 
 .filter.active {
-  border-color: coral !important; }
+  background: #ff7200 !important;
+  color: #fff; }

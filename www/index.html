@@ -58,9 +58,9 @@
             
             <div class="watchers" ng-controller="watchersCtrl">
                 <ul>
-										<li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
-												<img src="img/avatars/{{item.avatar}}" alt="{{item.user}}">
-										</li>
+					<li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
+						<img src="img/avatars/{{item.avatar}}" alt="{{item.user}}">
+					</li>
                     <li class="filter" data-filter="all">
                         all
                     </li>
@@ -73,19 +73,21 @@
     
         <div class="memosWrapper" ng-controller="memosCntr">
 
-					<div class="rangeBlock today">
-						<ul class="memos">
-							<li ng-repeat="item in memos" class="mix {{item.memoDep}}">
-								<div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
-								<div class="memoDate"><span class="day">Someday</span><span>{{item.memoDate}}</span></div>
-								<div class="memoContent">
-									<h3 class="memoTitle">{{item.memoTitle}}</h3>
-									{{item.memoContent}}
-								</div>
-								<div class="memoAttachment"></div>
-							</li>
-						</ul>
-					</div>
+<!--
+			<div class="rangeBlock today">
+				<ul class="memos">
+					<li ng-repeat="item in memos" class="mix {{item.memoDep}}">
+						<div class="memoAvatar"><img src="img/avatars/p.jpg" alt=""></div>
+						<div class="memoDate"><span class="day">Someday</span><span>{{item.memoDate}}</span></div>
+						<div class="memoContent">
+							<h3 class="memoTitle">{{item.memoTitle}}</h3>
+							{{item.memoContent}}
+						</div>
+						<div class="memoAttachment"></div>
+					</li>
+				</ul>
+			</div>
+-->
 	
             <!-- today -->
             <div class="rangeBlock today">
