@@ -1,0 +1,28 @@
+ <!--
+ <div class="details">
+    <img src="pics/{{memo.pic }}" width="100" height="100"/>
+    <h4>{{ memo.firstName }} {{ memo.lastName }}</h4>
+    <p>{{ memo.title }}<br/>
+    {{ memo.city }}</p>
+</div>
+-->
+
+<ion-view view-title="Memo">
+  <ion-content>
+  	<div class="memosWrapper" ng-controller="memoController">
+  		 <div class="rangeBlock">
+  		 	<ul>
+	  			<li class="mix {{memo.memoDep}}" ng-href="#/memo/{{memo.memoId}}">
+	        	<div class="memoAvatar"><img src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
+	          <div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
+	          <div class="memoContent">
+	              <h3><a ng-href="#/memo/{{memo.memoId}}">{{memo.memoTitle}}</a></h3>
+	              {{memo.memoContent}}
+	          </div>
+	          <div class="memoAttachment"></div>
+	    		</li>
+	    	</ul>
+  		</div>
+		</div>
+	</ion-content>
+</ion-view>

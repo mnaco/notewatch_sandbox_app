@@ -35,9 +35,13 @@ angular.module('data.controllers', [])
 			memoDate: '01.01.15',
 			memoTitle: 'Data Array',
 			memoContent: 'Anything you add to it (like the driversList in the above example) will be directly accessible in your views. For now, let’s just work with a dummy (static) data array, which we will replace later with our API service.'
+		},
+		{
+			memoDep: 'sn',
+			memoDate: '01.10.15',
+			memoTitle: 'Route this',
+			memoContent: 'Something interesting.'
 		}
    ];
 
 });
-
-
