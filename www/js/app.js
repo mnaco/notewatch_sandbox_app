@@ -61,6 +61,7 @@ notewatchApp.controller('memosController', function ($scope, MemoService) {
   // call mixitup plugin
   $scope.$on("$ionicView.loaded", function() {
     findAllMemos();
+    console.log('loaded');
     jQuery(function(){
       jQuery('.rangeBlock').mixItUp({
         animation: {

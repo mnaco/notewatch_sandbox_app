@@ -16,14 +16,14 @@
 <ion-view view-title="Memos">
   <ion-content>
 
-  	<div class="memosWrapper" ng-controller="memosController">
+  	<div class="memosWrapper" >
 
 	     <div class="rangeBlock today">
-	        <ul class="memos">
+	        <ul class="memos" ng-controller="memosController">
 						<!-- <li ng-repeat="item in memos" class="mix {{item.memoDep}}"> -->
 
-						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ng-href="#/memo/{{memo.memoId}}">
-            	<div class="memoAvatar"><img src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
+						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="memo({memoId: memo.memoId})">
+            	<div class="memoAvatar"><img ng-src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
               <div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
               <div class="memoContent">
                   <h3><a ng-href="#/memo/{{memo.memoId}}">{{memo.memoTitle}}</a></h3>

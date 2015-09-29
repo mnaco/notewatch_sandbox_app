@@ -62,7 +62,7 @@
                 <div class="watchers" ng-controller="watchersCtrl">
                     <ul>
     					<li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
-    						<img src="/img/avatars/{{item.avatar}}" alt="{{item.user}}">
+    						<img ng-src="/img/avatars/{{item.avatar}}" alt="{{item.user}}">
     					</li>
                         <li class="filter" data-filter="all">
                             all
@@ -76,7 +76,8 @@
         
             
 
-    		<ion-nav-view></ion-nav-view>
+    		<ion-nav-view ui-view></ion-nav-view>
+
 <!--
     ----------
 -->
@@ -104,7 +105,6 @@
                 <!-- --------------------------------- -->
             </ion-content>
 
-		 
         </ion-view>
 
 </body>
