@@ -12,21 +12,39 @@
 </ion-view>
 -->
 
-
 <ion-view view-title="Memos">
-  <ion-content>
+  <ion-content ng-controller="memosController">
+
+  
+    <div class="pageHeader">
+        
+        <div class="headerImg">
+            <img src="img/header_bcgr.jpg" alt="">
+        </div>
+        
+        <div class="watchers" ng-controller="watchersCtrl">
+            <ul>
+              <li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
+                <img ng-src="img/avatars/{{item.avatar}}" alt="{{item.user}}">
+              </li>
+              <li class="filter" data-filter="all">all</li>
+          </ul>
+        </div>
+        
+        <h1 class="headerTitle">Hi there</h1>
+    </div>
 
   	<div class="memosWrapper" >
 
 	     <div class="rangeBlock today">
-	        <ul class="memos" ng-controller="memosController">
+	        <ul class="memos">
 						<!-- <li ng-repeat="item in memos" class="mix {{item.memoDep}}"> -->
 
 						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="memo({memoId: memo.memoId})">
             	<div class="memoAvatar"><img ng-src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
               <div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
               <div class="memoContent">
-                  <h3><a ng-href="#/memo/{{memo.memoId}}">{{memo.memoTitle}}</a></h3>
+                  <h3>{{memo.memoTitle}}</h3>
                   {{memo.memoContent}}
               </div>
               <div class="memoAttachment"></div>

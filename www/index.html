@@ -29,83 +29,19 @@
         
 	<script src="js/notewatch/jquery-1.11.3.min.js"></script>
 	<script src="js/notewatch/jquery.mixitup.min.js"></script>
-
-<!--
-    <script>
-        jQuery(function(){
-            jQuery('.rangeBlock').mixItUp({
-                animation: {
-                    duration: 200,
-                    effects: 'scale'
-                }
-            });
-        });
-    </script>
--->    
-        
+         
     </head>
     
-<body ng-app="notewatchapp">
- 
+    <body ng-app="notewatchapp">
+     
+    	<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+                Back
+            </ion-nav-back-button>
+        </ion-nav-bar>
+         
+        <ion-nav-view ui-view=""></ion-nav-view>
+     
 
-	<ion-view title="Notewatch">
-		 
-		<ion-content>
-         	
-            <!-- --------------------------------- -->
-            <div class="pageHeader">
-    					
-                <div class="headerImg">
-                    <img src="img/header_bcgr.jpg" alt="">
-                </div>
-                
-                <div class="watchers" ng-controller="watchersCtrl">
-                    <ul>
-    					<li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
-    						<img ng-src="/img/avatars/{{item.avatar}}" alt="{{item.user}}">
-    					</li>
-                        <li class="filter" data-filter="all">
-                            all
-                        </li>
-                    </ul>
-                </div>
-    					
-                <h1 class="headerTitle">Hi there</h1>
-            </div>
-            
-        
-            
-
-    		<ion-nav-view ui-view></ion-nav-view>
-
-<!--
-    ----------
--->
-<!--
-    <div class="rangeBlock today">
-            <ul class="memos">
-                <li ng-repeat="item in memos" class="mix {{item.memoDep}}">
-                    <div class="memoAvatar"><img src="/img/avatars/p.jpg" alt=""></div>
-                    <div class="memoDate"><span class="day">Someday</span><span>{{item.memoDate}}</span></div>
-                    <div class="memoContent">
-                        <h3 class="memoTitle">{{item.memoTitle}}</h3>
-                        {{item.memoContent}}
-                    </div>
-                    <div class="memoAttachment"></div>
-                </li>
-            </ul>
-        </div>
--->
-<!--
-    ----------
--->
-	
-           
-
-                <!-- --------------------------------- -->
-            </ion-content>
-
-        </ion-view>
-
-</body>
+    </body>
 </html>

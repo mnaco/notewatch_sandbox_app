@@ -69,7 +69,7 @@ angular.module('notewatchapp.services', [])
           deferred.resolve(results);
           return deferred.promise;
       }
-		}
+	}
 })
 
 .factory('WatchersService', function($q) {
@@ -91,10 +91,10 @@ angular.module('notewatchapp.services', [])
 		user: 'Dauther',
 		avatar: 'd.jpg',
 		filterHook: 'dr'
-  }
-  ];
+	}
+	];
 
-  return {
+	return {
 		findAll: function() {
 		    var deferred = $q.defer();
 		    deferred.resolve(watchers);

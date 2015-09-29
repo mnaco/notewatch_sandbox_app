@@ -27,7 +27,12 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
   .state('memos', {
     url: '/memos',
     templateUrl: 'templates/memos.html',
-    controller: 'memosController'
+    controller: 'memosController',
+    resolve: {
+      allmemos: function(MemoService) {
+        return MemoService.findAll();
+      }
+    }
   })
 
   .state('memo', {
@@ -49,7 +54,7 @@ notewatchApp.controller('memoController', function ($scope, $stateParams, MemoSe
 });
 
 // memoS (all) controller
-notewatchApp.controller('memosController', function ($scope, MemoService) {
+notewatchApp.controller('memosController', function ($scope, MemoService, $ionicLoading) {
  
   // list the memos
   var findAllMemos = function() {
@@ -57,28 +62,29 @@ notewatchApp.controller('memosController', function ($scope, MemoService) {
           $scope.memos = memos;
       });
   }
+  findAllMemos();
   
-  // call mixitup plugin
-  $scope.$on("$ionicView.loaded", function() {
-    findAllMemos();
-    console.log('loaded');
+  // call 'mixitup' plugin
+  $scope.$on("$ionicView.enter", function() {
     jQuery(function(){
       jQuery('.rangeBlock').mixItUp({
         animation: {
             duration: 200,
             effects: 'scale'
+        },
+        callbacks: {
+          onMixFail: function(state){
+            console.log('No elements found matching ' + state.activeFilter);
+          }
         }
       });
     });
   });
 
-
-
 });
 
-notewatchApp.controller('watchersController', function($scope, WatchersService) {
-  
-  // list the memos
+notewatchApp.controller('watchersController', function ($scope, WatchersService, $ionicLoading) {
+  // list watchers
   var findAllWatchers = function() {
     WatchersService.findAll().then(function (watchers) {
         $scope.watchers = watchers;
