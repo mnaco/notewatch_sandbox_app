@@ -46,41 +46,11 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 
-// memo (single) controller
-notewatchApp.controller('memoController', function ($scope, $stateParams, MemoService) {
-  MemoService.findById($stateParams.memoId).then(function(memo) {
-    $scope.memo = memo;
-  });
-});
-
-// read memos from SERVICE
-notewatchApp.controller('memosController', function ($scope, MemoService, $ionicLoading) {
- 
-  // list the memos
-  var findAllMemos = function() {
-      MemoService.findAll().then(function (memos) {
-          $scope.memos = memos;
-      });
-  }
-  findAllMemos();
-  
-  // call 'mixitup' plugin 
-  // $scope.$on("$ionicView.loaded", function() { });
-  $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-    jQuery(function() {
-      jQuery('.rangeBlock').mixItUp({
-        animation: {
-            duration: 200,
-            effects: 'scale'
-        }
-      });
-    });
-  });
-
-});
 
 
+//
 // directive needs to call a function after data loaded
+//
 notewatchApp.directive('onFinishRender', function ($timeout) {
   return {
       restrict: 'A',
@@ -93,11 +63,47 @@ notewatchApp.directive('onFinishRender', function ($timeout) {
       }
   }
 });
+// ----------------------------
+
+
+// memo (single) controller
+notewatchApp.controller('memoController', function ($scope, $stateParams, MemoService) {
+  MemoService.findById($stateParams.memoId).then(function(memo) {
+    $scope.memo = memo;
+  });
+});
+
+
+//
+// read memos from SERVICE
+//
+notewatchApp.controller('memosController', function ($scope, MemoService, $ionicLoading) {
+
+  var findAllMemos = function() {
+    MemoService.findAll().then(function (memos) {
+      $scope.memos = memos;
+      // call mixitup
+      $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+        jQuery(function() {
+          jQuery('.rangeBlock').mixItUp({
+            animation: {
+              duration: 200,
+              effects: 'scale'
+            }
+          });
+        });
+      });
+    });
+  }
+  findAllMemos();
+});
+// ----------------------------
 
 
 // 
 // read watchers from SERVICE
 //
+/*
 notewatchApp.controller('watchersFromServiceController', function ($scope, WatchersService, $ionicLoading) {
   var findAllWatchers = function() {
     WatchersService.findAll().then(function (watchers) {
@@ -106,9 +112,8 @@ notewatchApp.controller('watchersFromServiceController', function ($scope, Watch
   }
   findAllWatchers();
 });
-//
-//
-//
+*/
+// ----------------------------
 
 
 //
@@ -124,24 +129,32 @@ notewatchApp.controller('watchersFromJsonController', function ($scope, $http) {
       console.log(data + ':' + status);
     });
 });
-//
-//
-//
+// ----------------------------
 
 
 //
 // read memos from JSON
 // 
+/*
 notewatchApp.controller('memosFromJsonController', ['$scope', '$http', function ($scope, $http) {
   $http.get('/json/memos.json')
     .success(function (result) {
       $scope.memos = result;
+      $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+        jQuery(function() {
+          jQuery('.rangeBlock').mixItUp({
+            animation: {
+                duration: 200,
+                effects: 'scale'
+            }
+          });
+        });
+      });
     })
     .error(function (data, status) {
       console.log(data + ',' + status)
     });
 }]);
+*/
+// ----------------------------
 
-//
-//
-//
