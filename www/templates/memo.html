@@ -1,7 +1,7 @@
-<ion-view ng-controller="memoController" view-title="Memo">
+<ion-view view-title="Memo">
   <ion-content>
   	<div class="memosWrapper">
-  		 <div class="rangeBlock">
+  		 <div class="rangeBlock" ng-controller="memoController" >
   		 	<ul>
 	  			<li class="mix {{memo.memoDep}}" ng-href="#/memo/{{memo.memoId}}">
 	        		<div class="memoAvatar"><img src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>

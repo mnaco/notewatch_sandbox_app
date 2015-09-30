@@ -1,0 +1,37 @@
+[
+  	{
+		"memoId" : "1",
+		"memoDep" : "dd",
+		"memoDate" : "Today",
+		"memoTitle" : "Scope Variable",
+		"memoContent" : "You may have noticed the $scope variable we’re passing as a parameter to the controller. The $scope variable is supposed to link your controller and views. In particular, it holds all the data that will be used within your template."
+	},
+	{
+		"memoId" : "2",
+		"memoDep" : "sn",
+		"memoDate" : "Today",
+		"memoTitle" : "Route this",
+		"memoContent" : "Something interesting."
+	},
+	{
+		"memoId" : "3",
+		"memoDep" : "dd",
+		"memoDate" : "01.01.15",
+		"memoTitle" : "Data Array",
+		"memoContent" : "Anything you add to it (like the driversList in the above example) will be directly accessible in your views. For now, let’s just work with a dummy (static) data array, which we will replace later with our API service."
+	},
+	{
+		"memoId" : "4",
+		"memoDep" : "dr",
+		"memoDate" : "01.10.15",
+		"memoTitle" : "Homework",
+		"memoContent" : "Next, we probably want to grab one specific user out of the returned collection from above. Let’s assume our users array looks like this:"
+	},
+	{
+		"memoId" : "5",
+		"memoDep" : "mm",
+		"memoDate" : "01.10.15",
+		"memoTitle" : "Leek & Bacon Egg Tottins",
+		"memoContent" : "Preheat oven to 400 degrees. Spray cups with canola oil. Line each cup with three potato tots and set aside. Add butter to a medium pan on medium heat, and sauté leeks 2-3 minutes until caramelized. Remove from pan and set aside in a medium bowl. Cook bacon in the same pan. Once crispy, remove to cool, blot dry, then chop into small pieces. Add bacon pieces to bowl of leeks, then stir in eggs, salt and pepper. Set bowl aside. Add three to four pinches of goat cheese on top of the potato tots in each cup. Then, evenly distribute the egg mixture among the cups. Bake for approximately 20-23 minutes until egg is cooked and tops have browned slightly. Allow to cool for a minute, then run a knife around the edges of each cup, carefully remove and place in a serving platter. Serve immediately."
+	}
+]

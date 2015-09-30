@@ -13,34 +13,59 @@
 -->
 
 <ion-view view-title="Memos">
-  <ion-content ng-controller="memosController">
+  <ion-content>
 
   
     <div class="pageHeader">
         
         <div class="headerImg">
-            <img src="img/header_bcgr.jpg" alt="">
+          <img src="img/header_bcgr.jpg" alt="">
         </div>
         
-        <div class="watchers" ng-controller="watchersCtrl">
+
+<!--
+        <div class="watchers" ng-controller="watchersFromJsonController">
             <ul>
-              <li ng-repeat="item in wathcers" class="filter" data-filter=".{{item.filterHook}}">
+              <li class="filter" ng-repeat="item in watchers" data-filter=".{{item.filterHook}}">
                 <img ng-src="img/avatars/{{item.avatar}}" alt="{{item.user}}">
               </li>
               <li class="filter" data-filter="all">all</li>
           </ul>
         </div>
+-->        
+
         
+        <!-- watchers (static) -->
+        <div class="watchers">
+            <ul>
+              <li class="filter" data-filter=".dd">
+                <img ng-src="img/avatars/p.jpg" alt="Father" src="img/avatars/p.jpg">
+              </li>
+              <li class="filter" data-filter=".mm">
+                <img ng-src="img/avatars/m.jpg" alt="Mother" src="img/avatars/m.jpg">
+              </li>
+              <li class="filter" data-filter=".sn">
+                <img ng-src="img/avatars/s.jpg" alt="Son" src="img/avatars/s.jpg">
+              </li>
+              <li class="filter" data-filter=".dr">
+                <img ng-src="img/avatars/d.jpg" alt="Dauther" src="img/avatars/d.jpg">
+              </li>
+              <li class="filter active" data-filter="all">all</li>
+          </ul>
+        </div>
+        <!-- /static -->
+
+
         <h1 class="headerTitle">Hi there</h1>
     </div>
 
-  	<div class="memosWrapper" >
+  	<div class="memosWrapper" ng-controller="memosController">
 
 	     <div class="rangeBlock today">
 	        <ul class="memos">
 						<!-- <li ng-repeat="item in memos" class="mix {{item.memoDep}}"> -->
 
-						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="memo({memoId: memo.memoId})">
+						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="memo({memoId: memo.memoId})" on-finish-render="ngRepeatFinished">
             	<div class="memoAvatar"><img ng-src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
               <div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
               <div class="memoContent">

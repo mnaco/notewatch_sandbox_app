@@ -1,7 +1,7 @@
 angular.module('data.controllers', [])
     
 .controller('watchersCtrl', function($scope) {
-	$scope.wathcers = [{
+	$scope.watchers = [{
 		user: 'Father',
 		avatar: 'p.jpg',
 		filterHook: 'dd'

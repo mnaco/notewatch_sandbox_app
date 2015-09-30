@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var notewatchApp = angular.module('notewatchapp', ['ionic', 'data.controllers', 'notewatchapp.services'])
+var notewatchApp = angular.module('notewatchapp', ['ionic', 'notewatchapp.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -53,7 +53,7 @@ notewatchApp.controller('memoController', function ($scope, $stateParams, MemoSe
   });
 });
 
-// memoS (all) controller
+// read memos from SERVICE
 notewatchApp.controller('memosController', function ($scope, MemoService, $ionicLoading) {
  
   // list the memos
@@ -64,18 +64,14 @@ notewatchApp.controller('memosController', function ($scope, MemoService, $ionic
   }
   findAllMemos();
   
-  // call 'mixitup' plugin
-  $scope.$on("$ionicView.enter", function() {
-    jQuery(function(){
+  // call 'mixitup' plugin 
+  // $scope.$on("$ionicView.loaded", function() { });
+  $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+    jQuery(function() {
       jQuery('.rangeBlock').mixItUp({
         animation: {
             duration: 200,
             effects: 'scale'
-        },
-        callbacks: {
-          onMixFail: function(state){
-            console.log('No elements found matching ' + state.activeFilter);
-          }
         }
       });
     });
@@ -83,8 +79,26 @@ notewatchApp.controller('memosController', function ($scope, MemoService, $ionic
 
 });
 
-notewatchApp.controller('watchersController', function ($scope, WatchersService, $ionicLoading) {
-  // list watchers
+
+// directive needs to call a function after data loaded
+notewatchApp.directive('onFinishRender', function ($timeout) {
+  return {
+      restrict: 'A',
+      link: function (scope, element, attr) {
+          if (scope.$last === true) {
+              $timeout(function () {
+                  scope.$emit('ngRepeatFinished');
+              });
+          }
+      }
+  }
+});
+
+
+// 
+// read watchers from SERVICE
+//
+notewatchApp.controller('watchersFromServiceController', function ($scope, WatchersService, $ionicLoading) {
   var findAllWatchers = function() {
     WatchersService.findAll().then(function (watchers) {
         $scope.watchers = watchers;
@@ -92,3 +106,42 @@ notewatchApp.controller('watchersController', function ($scope, WatchersService,
   }
   findAllWatchers();
 });
+//
+//
+//
+
+
+//
+// read watchers from JSON
+// 
+notewatchApp.controller('watchersFromJsonController', function ($scope, $http) {
+  $scope.wathcers = [];
+  $http.get('/json/watchers.json')
+    .success(function(data) {
+      $scope.watchers = data;
+    })
+    .error(function(data, status){
+      console.log(data + ':' + status);
+    });
+});
+//
+//
+//
+
+
+//
+// read memos from JSON
+// 
+notewatchApp.controller('memosFromJsonController', ['$scope', '$http', function ($scope, $http) {
+  $http.get('/json/memos.json')
+    .success(function (result) {
+      $scope.memos = result;
+    })
+    .error(function (data, status) {
+      console.log(data + ',' + status)
+    });
+}]);
+
+//
+//
+//
