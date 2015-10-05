@@ -19,11 +19,14 @@ var notewatchApp = angular.module('notewatchapp', ['ionic', 'notewatchapp.servic
 });
 
 
+//
 // routs
+//
 notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
+  // app container (re menu)
   .state('app', {
     url: '/app',
     abstract: true,
@@ -31,6 +34,7 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
     controller: 'appController',
   })
 
+  // memos
   .state('app.memos', {
     url: '/memos',
     views: {
@@ -46,6 +50,7 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
 
+  // single memo
   .state('app.memo', {
     url: '/memo/:memoId',
     views: {
@@ -56,6 +61,7 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
 
+  // settings
   .state('app.settings', {
     url: '/settings',
     views: {
@@ -66,7 +72,7 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
     }
   });
   
-  $urlRouterProvider.otherwise('app/settings');
+  $urlRouterProvider.otherwise('app/memos');
 
 });
 
@@ -75,7 +81,7 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
 // app controller
 //
 notewatchApp.controller('appController', function ($scope){
-  console.log('app loaded');
+  
 });
 
 
