@@ -1,0 +1,26 @@
+// default skin
+
+$backgroundColor: #44484b;
+$menuBackground: #333;
+
+.skinSetup {
+
+	.pane, 
+	.view {
+		background: $backgroundColor;
+		color: #fff;
+	}
+
+	.menu {
+		background: $menuBackground;
+		.bar-header {
+			padding: 20px 0;
+		}
+	}
+
+	.item-complex .item-content, 
+	.item-radio .item-content {
+		background: $menuBackground;
+	}
+
+}

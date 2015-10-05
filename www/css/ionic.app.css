@@ -7700,6 +7700,16 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.skinSetup .pane, .skinSetup .view {
+  background: #44484b;
+  color: #fff; }
+.skinSetup .menu {
+  background: #333; }
+  .skinSetup .menu .bar-header {
+    padding: 20px 0; }
+.skinSetup .item-complex .item-content, .skinSetup .item-radio .item-content {
+  background: #333; }
+
 @font-face {
   font-family: 'Open Sans Condensed';
   font-style: normal;
@@ -7707,9 +7717,7 @@ a.button {
   src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(fonts/font.woff2) format('woff2'); }
 
 body {
-  background: #44484b;
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-align: center; }
+  font-family: 'Open Sans Condensed', sans-serif; }
 
 p {
   padding: .2em; }
@@ -7721,7 +7729,6 @@ h1, h2, h3 {
 .memosWrapper {
   width: 100%;
   margin: 0 auto;
-  background: #44484b;
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center; }
 
@@ -7818,7 +7825,8 @@ h1, h2, h3 {
     position: absolute;
     z-index: 3;
     bottom: 0px;
-    width: 100%; }
+    width: 100%;
+    text-align: center; }
     .pageHeader .watchers ul {
       list-style: none;
       margin: 0;
