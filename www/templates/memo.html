@@ -1,8 +1,17 @@
-<ion-view view-title="Memo">
-  <ion-content>
-  	<div class="memosWrapper">
-  		 <div class="rangeBlock" ng-controller="memoController" >
-  		 	<ul>
+<ion-view view-title="">
+	
+	<!--
+	<ion-nav-bar class="bar-dark">
+        <ion-nav-back-button class="button-clear">
+    		<i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+-->
+
+	<ion-content>
+		<div class="memosWrapper">
+			 <div class="rangeBlock" ng-controller="memoController" >
+			 	<ul>
 	  			<li class="mix {{memo.memoDep}}" ng-href="#/memo/{{memo.memoId}}">
 	        		<div class="memoAvatar"><img src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
 					<div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
@@ -13,7 +22,8 @@
 					<div class="memoAttachment"></div>
 	    		</li>
 	    	</ul>
-  		</div>
+			</div>
 		</div>
 	</ion-content>
+
 </ion-view>

@@ -12,7 +12,7 @@
 </ion-view>
 -->
 
-<ion-view view-title="Memos">
+<ion-view view-title="Hi there">
   <ion-content>
 
   
@@ -65,7 +65,7 @@
 	        <ul class="memos">
 						<!-- <li ng-repeat="item in memos" class="mix {{item.memoDep}}"> -->
 
-						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="memo({memoId: memo.memoId})" on-finish-render="ngRepeatFinished">
+						<li class="mix {{memo.memoDep}}" ng-repeat="memo in memos" ui-sref="app.memo({memoId: memo.memoId})" on-finish-render="ngRepeatFinished">
             	<div class="memoAvatar"><img ng-src="img/avatars/{{memo.memoDep}}.jpg" alt=""></div>
               <div class="memoDate"><span class="day">{{memo.memoDate}}</span><span class="time">07:30</span></div>
               <div class="memoContent">

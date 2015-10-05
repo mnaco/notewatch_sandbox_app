@@ -24,10 +24,21 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-  .state('memos', {
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'appController',
+  })
+
+  .state('app.memos', {
     url: '/memos',
-    templateUrl: 'templates/memos.html',
-    controller: 'memosController',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/memos.html',
+        controller: 'memosController',
+      }
+    },
     resolve: {
       allmemos: function(MemoService) {
         return MemoService.findAll();
@@ -35,21 +46,49 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
     }
   })
 
-  .state('memo', {
+  .state('app.memo', {
     url: '/memo/:memoId',
-    templateUrl: 'templates/memo.html',
-    controller: 'memoController'
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/memo.html',
+        controller: 'memoController'
+      }
+    }
+  })
+
+  .state('app.settings', {
+    url: '/settings',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/settings.html',
+        controller: 'settingsController'
+      }
+    }
   });
   
-  $urlRouterProvider.otherwise('/memos');
+  $urlRouterProvider.otherwise('app/settings');
 
 });
 
 
+//
+// app controller
+//
+notewatchApp.controller('appController', function ($scope){
+  console.log('app loaded');
+});
+
+
+// 
+// settings controller
+//
+notewatchApp.controller('settingsController', function ($scope){
+
+});
 
 
 //
-// directive needs to call a function after data loaded
+// directive needs to call a function after data loaded (mixitup)
 //
 notewatchApp.directive('onFinishRender', function ($timeout) {
   return {
@@ -68,7 +107,7 @@ notewatchApp.directive('onFinishRender', function ($timeout) {
 
 // memo (single) controller
 notewatchApp.controller('memoController', function ($scope, $stateParams, MemoService) {
-  MemoService.findById($stateParams.memoId).then(function(memo) {
+  MemoService.findById($stateParams.memoId).then(function (memo) {
     $scope.memo = memo;
   });
 });
