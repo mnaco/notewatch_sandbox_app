@@ -82,6 +82,12 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
 //
 notewatchApp.controller('appController', function ($scope){
   
+  // toggle class of an element
+  $scope.toggleClass = function (element, className) {
+    console.log ('test: ' + className + ' : ' + element);
+    $(element).toggleClass(className);
+  }
+
 });
 
 

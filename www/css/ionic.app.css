@@ -7785,6 +7785,9 @@ h1, h2, h3 {
     margin: 0 0 2% 2%;
     display: flex; }
 
+.memosWrapper.listView .memos li {
+  flex-basis: 100% !important; }
+
 .rangeBlock.today {
   font-size: 2em; }
   .rangeBlock.today li {

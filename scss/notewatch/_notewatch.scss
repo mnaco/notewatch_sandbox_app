@@ -93,6 +93,13 @@ h1,h2,h3 {
 	}
 }
 
+// list-block view
+.memosWrapper.listView {
+    .memos li {
+        flex-basis: 100% !important;
+    }
+}
+
 .rangeBlock.today {
 	font-size: 2em;
 	li { 

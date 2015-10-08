@@ -7,6 +7,9 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button icon ion-android-phone-portrait" ng-click="toggleClass('.memosWrapper', 'listView')"></button>
+      </ion-nav-buttons>
     </ion-nav-bar>
     <!-- content container -->
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -30,4 +33,5 @@
       </ion-list>
     </ion-content>
   </ion-side-menu>
+
 </ion-side-menus>
