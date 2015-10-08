@@ -7785,9 +7785,6 @@ h1, h2, h3 {
     margin: 0 0 2% 2%;
     display: flex; }
 
-.memosWrapper.listView .memos li {
-  flex-basis: 100% !important; }
-
 .rangeBlock.today {
   font-size: 2em; }
   .rangeBlock.today li {
@@ -7911,3 +7908,50 @@ h1, h2, h3 {
 .filter.active {
   background: #ff7200 !important;
   color: #fff; }
+
+@-webkit-keyframes rotate90deg {
+  100% {
+    transform: rotate(90deg); } }
+
+@-webkit-keyframes rotate90to0deg {
+  0% {
+    transform: rotate(90deg); }
+
+  100% {
+    transform: rotate(0deg); } }
+
+@-webkit-keyframes memoWidthFull {
+  0% {
+    opacity: 0; }
+
+  10% {
+    flex-basis: 100%;
+    opacity: 0; }
+
+  100% {
+    flex-basis: 100%;
+    opacity: 1; } }
+
+@-webkit-keyframes memoWidthBack {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.iconLaPoView {
+  -webkit-animation: rotate90to0deg .2s linear;
+  -webkit-animation-fill-mode: forwards; }
+  .iconLaPoView:before {
+    font-size: 24px !important; }
+
+.memos li {
+  -webkit-animation: memoWidthBack .2s linear;
+  -webkit-animation-fill-mode: forwards; }
+
+.listView .iconLaPoView {
+  -webkit-animation: rotate90deg .2s linear;
+  -webkit-animation-fill-mode: forwards; }
+.listView .memos li {
+  -webkit-animation: memoWidthFull .3s linear;
+  -webkit-animation-fill-mode: forwards; }
