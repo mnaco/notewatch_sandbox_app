@@ -2,6 +2,8 @@
 
 $backgroundColor: #44484b;
 $menuBackground: #333;
+$textColor: #eee;
+
 
 .skinSetup {
 
@@ -18,9 +20,11 @@ $menuBackground: #333;
 		}
 	}
 
+	.item,
 	.item-complex .item-content, 
 	.item-radio .item-content {
-		background: $menuBackground;
+		background: transparent;
+		color: $textColor;
 	}
 
 }

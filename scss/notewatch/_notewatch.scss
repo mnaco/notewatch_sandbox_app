@@ -250,6 +250,21 @@ h1,h2,h3 {
 
 
 // <---
+// user profile in side menu
+.sideMenu {
+
+    .userProfile { 
+        background: $backgroundColor;
+        padding: 48px 20px 0;
+        font-size: 1.4em;
+    }
+
+}
+// --->
+
+
+
+// <---
 // list-block view
 
 @-webkit-keyframes rotate90deg { 100% { transform: rotate(90deg); } }

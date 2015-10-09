@@ -7,28 +7,33 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon ion-android-phone-portrait iconLaPoView" ng-click="toggleClass('body', 'listView')"></button>
-      </ion-nav-buttons>
     </ion-nav-bar>
     <!-- content container -->
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" class="sideMenu">
+  <!--
     <ion-header-bar class="bar-stable">
       <h1 class="title">Left</h1>
     </ion-header-bar>
+  -->
     <ion-content>
+      <div class="userProfile">
+        <span class="item-avatar" href="#">
+          <img ng-src="img/avatars/p.jpg" alt="Father" src="img/avatars/p.jpg">
+          <div>Dady</div>
+        </span>
+      </div>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item menu-close href="#/app/memos">
+          Memos
         </ion-item>
         <ion-item menu-close href="#/app/settings">
           Settings
         </ion-item>
-        <ion-item menu-close href="#/app/memos">
-          Memos
+        <ion-item menu-close ng-click="logout()">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>

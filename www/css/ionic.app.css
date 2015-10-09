@@ -7707,8 +7707,9 @@ a.button {
   background: #333; }
   .skinSetup .menu .bar-header {
     padding: 20px 0; }
-.skinSetup .item-complex .item-content, .skinSetup .item-radio .item-content {
-  background: #333; }
+.skinSetup .item, .skinSetup .item-complex .item-content, .skinSetup .item-radio .item-content {
+  background: transparent;
+  color: #eee; }
 
 @font-face {
   font-family: 'Open Sans Condensed';
@@ -7908,6 +7909,11 @@ h1, h2, h3 {
 .filter.active {
   background: #ff7200 !important;
   color: #fff; }
+
+.sideMenu .userProfile {
+  background: #44484b;
+  padding: 48px 20px 0;
+  font-size: 1.4em; }
 
 @-webkit-keyframes rotate90deg {
   100% {
