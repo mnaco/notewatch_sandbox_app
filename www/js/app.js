@@ -70,8 +70,20 @@ notewatchApp.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'settingsController'
       }
     }
+  })
+
+  // login
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html',
+        controller: 'loginController'
+      }
+    }
   });
   
+  // default
   $urlRouterProvider.otherwise('app/memos');
 
 });
@@ -94,6 +106,15 @@ notewatchApp.controller('appController', function ($scope){
 // settings controller
 //
 notewatchApp.controller('settingsController', function ($scope){
+
+});
+
+
+
+// 
+// login controller
+//
+notewatchApp.controller('loginController', function ($scope){
 
 });
 
