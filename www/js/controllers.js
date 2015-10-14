@@ -17,6 +17,16 @@ angular.module('memoapp.controllers', [])
 
 
 //
+// sprofile page controller
+// 
+.controller('profileController', function ($scope){
+
+})
+// ----------------------------
+
+
+
+//
 // settings page controller
 // 
 .controller('settingsController', function ($scope){

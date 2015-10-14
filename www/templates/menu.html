@@ -20,10 +20,12 @@
   -->
     <ion-content>
       <div class="userProfile">
-        <span class="item-avatar" href="#">
-          <img ng-src="img/avatars/p.jpg" alt="Father" src="img/avatars/p.jpg">
-          <div>Dady</div>
-        </span>
+        <a menu-close href="#/app/profile">
+          <span class="item-avatar" href="#">
+              <img ng-src="img/avatars/p.jpg" alt="Father" src="img/avatars/p.jpg">
+              <div>Dady</div>
+          </span>
+        </a>
       </div>
       <ion-list>
         <ion-item menu-close href="#/app/memos">
@@ -31,6 +33,9 @@
         </ion-item>
         <ion-item menu-close href="#/app/settings">
           Settings
+        </ion-item>
+        <ion-item menu-close href="#/app/profile">
+          Profile
         </ion-item>
         <ion-item menu-close href="#/app/login">
           Login

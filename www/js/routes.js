@@ -78,6 +78,21 @@ angular.module('memoapp.routes', [])
 
 
   //
+  // profile
+  //
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'profileController'
+      }
+    }
+  })
+  // ----------------------------
+
+
+  //
   // login
   //
   .state('app.login', {
