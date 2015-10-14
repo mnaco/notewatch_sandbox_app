@@ -45,6 +45,32 @@ angular.module('memoapp.controllers', [])
 // ----------------------------
 
 
+
+//
+// team page controller
+//
+.controller('teamController', function ($scope){
+
+})
+// ----------------------------
+
+
+
+
+//
+// team list controller
+//
+.controller('teamListController', function ($scope, WatchersService, $ionicLoading) {
+	var getAllTeamMembers = function() {
+	    WatchersService.findAll().then(function (watchers) {
+	        $scope.watchers = watchers;
+	    });
+	  }
+  	getAllTeamMembers();
+})
+// ----------------------------
+
+
 //
 // memo (single) controller
 // ----------------------------

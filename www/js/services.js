@@ -78,19 +78,32 @@ angular.module('memoapp.services', [])
   {
 		user: 'Father',
 		avatar: 'p.jpg',
-		filterHook: 'dd'
-	},{
+		filterHook: 'dd',
+		email: 'dad@m.ail'
+	},
+	{
 		user: 'Mother',
 		avatar: 'm.jpg',
-		filterHook: 'mm'
-	},{
+		filterHook: 'mm',
+		email: 'mom@m.ail'
+	},
+	{
 		user: 'Son',
 		avatar: 's.jpg',
-		filterHook: 'sn'
-	},{
-		user: 'Dauther',
+		filterHook: 'sn',
+		email: 'son@m.ail'
+	},
+	{
+		user: 'Daughter',
 		avatar: 'd.jpg',
-		filterHook: 'dr'
+		filterHook: 'dr',
+		email: 'daughter@m.ail'
+	},
+	{
+		user: 'Chappy',
+		avatar: 'chappi.jpg',
+		filterHook: 'chappi',
+		email: 'chappi@m.ail'
 	}
 	];
 

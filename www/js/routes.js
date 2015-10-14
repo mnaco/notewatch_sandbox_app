@@ -92,6 +92,22 @@ angular.module('memoapp.routes', [])
   // ----------------------------
 
 
+
+  //
+  // team
+  //
+  .state('app.team', {
+    url: '/team',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/team.html',
+        controller: 'teamController'
+      }
+    }
+  })
+  // ----------------------------
+
+
   //
   // login
   //
