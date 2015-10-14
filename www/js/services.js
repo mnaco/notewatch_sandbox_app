@@ -1,4 +1,4 @@
-angular.module('notewatchapp.services', [])
+angular.module('memoapp.services', [])
 
 .factory('MemoService', function($q) {
 
